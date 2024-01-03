@@ -1,0 +1,132 @@
+function validate(){
+    var name=document.forms["vform"]["Name"].value;
+    var mail=document.forms["vform"]["Email"].value;
+    var ccode=document.forms["vform"]["Country-Code"].value;
+    var pnum=document.forms["vform"]["Phone"].value;
+    var cname=document.forms["vform"]["Company-Name"].value;
+    var jtitle=document.forms["vform"]["Job-Title"].value;
+    var age=document.forms["vform"]["Age"].value;
+    var country=document.forms["vform"]["Country"].value;
+    var city=document.forms["vform"]["City"].value;
+    var malegender = document.getElementById("male");
+    var femalegender = document.getElementById("female");
+    var workshopDropdown = document.getElementById("workshop");
+    var Workshop = workshopDropdown.value;
+    var selectedDate = document.getElementById("date").value;
+    var minDate = "2023-10-19";
+    var maxDate = "2023-10-21";
+    var credit=document.getElementById("Credit");
+    var debit=document.getElementById("debit");
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');        
+    const photoInput = document.getElementById('photo');
+    const profileInput = document.getElementById('profile');
+    var regName = /\d+$/g;
+    var regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var regPhone = /^\d{10}$/;
+    var regccode= /(\+\d{1,3})/;
+
+    if (name == "" || regName.test(name)) {
+        alert("Please Enter your name properly.");
+        return false;
+    }
+    if (mail=="" || !regEmail.test(mail)){
+        alert("Please Enter the Valid Email.");
+        return false;
+    }
+    if (ccode=="" || !regccode.test(ccode)){
+        alert("Please Enter Valid Country Code.");
+        return false;
+    }
+    if (pnum=="" || !regPhone.test(pnum)){
+        alert("Please Enter Valid Phone Number.");
+        return false;
+    }
+    if(cname==""){
+        alert("Please Enter the Company Name.");
+        return false;
+    }
+    if(jtitle==""){
+        alert("Please Enter the Job Title.");
+        return false;
+    }
+    if (!malegender.checked && !femalegender.checked) {
+        alert("Please select a gender.");
+        return false;
+    }
+    if(age==""){
+        alert("Please Enter age")
+        return false;
+    }
+    if(age<15 || age>70){
+        alert("Min age should be 15 and Max age should be 70.");
+        return false;
+    }
+    if(country==""){
+        alert("Please Enter the Country Name.");
+        return false;
+    }
+    if(city==""){
+        alert("Please Enter the City Name.");
+        return false;
+    }
+    if (Workshop === "--Select Workshop--") {
+        alert("Please select a workshop.");
+        return false;
+    }
+    if (selectedDate < minDate || selectedDate > maxDate) {
+        alert("Please select a date");
+        return false;
+    }
+    if (!credit.checked && !debit.checked) {
+        alert("Please select a Credit or Debit Card.");
+        return false;
+    }
+    
+    let isChecked = false;
+
+    checkboxes.forEach(checkbox => {
+    if (checkbox.checked) {
+        isChecked = true;
+    }
+    });
+    if (!isChecked) {
+        alert('Please select at least one option for "How did you Hear About us?"');
+        return false;
+    }
+    if (photoInput.files.length === 0 && profileInput.files.length === 0) {
+        alert('Please upload at least one file.');
+        return false; // Prevent form submission
+    }
+
+    if (photoInput.files.length > 0) {
+        const photoFileType = photoInput.files[0].type;
+        if (photoFileType !== 'image/jpeg') {
+            alert('Invalid file type for photo. Please upload a JPG file.');
+            return false; // Prevent form submission
+        }
+    }
+
+    if (profileInput.files.length > 0) {
+        for (let i = 0; i < profileInput.files.length; i++) {
+            const profileFileType = profileInput.files[i].type;
+            if (profileFileType !== 'application/pdf') {
+                alert('Invalid file type for profile. Please upload PDF files only.');
+                return false; // Prevent form submission
+            }
+        }
+    }
+    alert("Form Successfully Submitted");
+    // Redirect();
+    return true;
+
+}
+function enableGuestFields() {
+    document.getElementById("nameguest").disabled = false;
+    document.getElementById("foods").disabled = false;
+}
+
+function disableGuestFields() {
+    document.getElementById("nameguest").disabled = true;
+    document.getElementById("foods").disabled = true;
+}
+
