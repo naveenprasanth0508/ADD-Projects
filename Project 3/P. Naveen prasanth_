@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sri Eshwar Conference</title>
+    <link rel="icon" href="sece.png">
+    <style>
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Sri Eshwar Conference Registration Form</h1>
+        <form name="vform" method="get" enctype="multipart/form-data" onsubmit="return validate()"> 
+            <table class="table" cellspacing="2" cellpadding="2" border="1">
+            <tr><td>
+                <label for="Name"><b><i>Name :</i></b></label></td>
+                <td><input  type="text" id="Name" name="Name" placeholder="Enter Your Name" autofocus>
+            </td></tr>
+            <tr><td>
+                <label for="email"><b><i>Email :</i></b></label></td>
+                <td><input type="text" id="email" name="Email" placeholder="Enter your Email">
+            </td></tr>
+            <tr><td>
+                <label for="ccode"><b><i>Country Code :</i></b></label></td>
+                <td><input  type="text" id="ccode" name="Country-Code" value="+91">
+            </td></tr>
+            <tr><td>
+                <label for="pnum"><b><i>Phone number :</i></b></label></td>
+                <td><input  type="tel" id="pnum" name="Phone" placeholder="Ex.9876543210">
+            </td></tr>
+            <tr><td>
+                <label for="cname"><b><i>Company Name :</i></b></label></td>
+                <td><input  type="text" id="cname" name="Company-Name" placeholder="Ex : Infosys" maxlength="20">
+            </td></tr>
+            <tr>
+                <td><label for="jtitle"><b><i>Job Title :</i></b></label></td>
+                <td><input  type="text" id="jtitle" name="Job-Title" placeholder="Ex : HR">
+            </td></tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><b><i>Gender:</i></b></td>
+                <td><input type="radio" name="Gender" id="male">
+                <label for="male">Male</label>
+            <div>
+                <input type="radio" name="Gender" id="female">
+                <label for="female">Female</label>
+            </div></td></tr>
+            <tr>
+                <td><label for="age"><b><i>Age</i></b></label></td>
+                <td><input type="number" id="age" name="Age"></td>
+            </tr>
+            <tr>
+                <td><label for="country"><b><i>Country :</i></b></label></td>
+                <td><input type="text" name="Country"  id="country" placeholder="Ex : India"></td>
+            </tr>
+            <tr>
+                <td><label for="city"><b><i>City :</i></b></label></td>
+                <td><input type="text" name="City" id="city" placeholder="Ex : Chennai"></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><label for="food"><b><i>Deitary Preferences :</i></b></label></td>
+                <td><select name="Selected-food:" id="food" multiple>
+                <option selected disabled>--Ctrl+Mouse to Select Multiple Choice--</option>
+                <optgroup label="Veg">
+                    <option value="Dosa">Dosa</option>
+                    <option value="Onion Dosa">Onion Dosa</option>
+                    <option value="Idly">Idly</option>
+                    <option value="Pongal">Pongal</option>
+                    <option value="Chappathi">Chappathi</option>
+                    <option value="Poori">Poori</option>
+                </optgroup>
+                <optgroup label="Non Veg">
+                    <option value="Curry Dosa">Curry Dosa</option>
+                    <option value="Chicken & Mutton Tikka">Chicken & Mutton Tikka</option>
+                    <option value="Chicken Manchurian">Chicken Manchurian</option>
+                    <option value="Chicken Briyani">Chicken Briyani</option>
+                    <option value="Mutton Briyani">Mutton Briyani</option>
+                </optgroup>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="tshirt"><b><i>Tshirt Size :</i></b></label></td>
+                <td><select id="tshirt" name="Tshirt-Size:">
+                    <option selected disabled>--Select Size--</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XLL</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="color"><b><i>Tshirt Colour :</i></b></label></td>
+                <td><input type="color" name="Color:" id="color"></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><b><i>Session:</i></b></td>
+                <td><input type="radio" name="Session:" id="ses1">
+                <label for="ses1">Session 1</label>
+                <div>
+                <input type="radio" name="Session:" id="ses2">
+                <label for="ses2">Session 2</label>
+                </div>
+                <div>
+                <input type="radio" name="Session:" id="ses3">
+                <label for="ses3">Session 3</label>
+                </div></td>
+            </tr>
+            <tr>
+                <td><label for="workshop"><b><i>Select workshop :</i></b></label></td>
+                <td><select id="workshop" name="Workshop:">
+                    <option selected disabled>--Select Workshop--</option>
+                    <option>Photography Workshops</option>
+                    <option>Coding Class</option>
+                    <option>Team Building Event</option>
+                    <option>Public speaking training</option>
+                    <option>Presentation skills</option>
+                    <option>Data Science Training</option>
+                    <option>Career Building</option>
+                    <option>Web & App Devlopment</option>
+                    <option>Business and Marketing</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="date"><b><i>Date of Attending :</i></b></label></td>
+                <td><input type="date" id="date" name="Date-Of-Attending:" min="2023-10-19" max="2023-10-21">
+            </td></tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><b><i>Will you bring a Guest?</i></b></td>
+                <td>
+                    <input type="radio" id="Yes" name="Any Guests:" onclick="enableGuestFields()">
+                    <label for="Yes">Yes</label>
+                <div>
+                    <input type="radio" id="No" name="Any Guests:" onclick="disableGuestFields()" checked>
+                    <label for="No">No</label>
+                </div></td>
+            </tr>
+            <tr>
+                <td><label for="nameguest"><b><i>Guest's Name:</i></b></label></td>
+                <td><input type="text" id="nameguest" name="Guest's-Name" placeholder="Ex : Arun, Ram" disabled></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><label for="foods"><b><i>Deitary Preferences for Guests :</i></b></label></td>
+                <td><select name="Selected-food(Guest):" id="foods" multiple disabled>
+                    <option selected disabled>--Ctrl+Mouse to Select Multiple Choice--</option>
+                        <optgroup label="Veg">
+                        <option value="Dosa">Dosa</option>   
+                        <option value="Onion Dosa">Onion Dosa</option>
+                        <option value="Idly">Idly</option>
+                        <option value="Pongal">Pongal</option>
+                        <option value="Chappathi">Chappathi</option>
+                        <option value="Poori">Poori</option>
+                    </optgroup>
+                    <optgroup label="Non Veg">
+                        <option>Curry Dosa</option>
+                        <option>Chicken & Mutton Tikka</option>
+                        <option>Chicken Manchurian</option>
+                        <option>Chicken Briyani</option>
+                        <option>Mutton Briyani</option>
+                    </optgroup>
+                </select></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><b><i>Preferred Payment Method :</i></b></td>
+                <td>
+                    <input type="radio" id="Credit" name="Payment-Method:">
+                    <label for="Credit">Credit Card</label>
+                <div>
+                    <input type="radio" id="debit" name="Payment-Method:">
+                    <label for="debit">Debit Card</label>
+                </div></td>
+            </tr>
+            <tr>
+                <td><label for="num"><b><i>Card Number :</i></b></label></td>
+                <td><input name="Card-Number" id="num" type="password" minlength="16" maxlength="16"></td>
+            </tr>
+            <tr>
+                <td><label for="exp"><b><i>Expiration Date :</i></b></label></td>
+                <td><input name="Expiration-date:" id="exp" type="month"></td>
+            </tr>
+            <tr>
+                <td><label for="cvv"><b><i>CVV Number :</i></b></label></td>
+                <td><input name="CVV-Number" id="cvv" type="password" minlength="3" maxlength="3"></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><label for="add"><b><i>Billing Address :</i></b></label></td>
+                <td><textarea name="Billing-Address" id="add" cols="30" rows="10" placeholder="Enter Address"></textarea></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><b><i>How did you Hear About us?</i></b></td>
+                <td>
+                <input type="checkbox" id="ad" name="From Ads">
+                <label for="ad">Through Ads / </label>
+                <input type="checkbox" id="social" name="From Media">
+                <label for="social">Social Media / </label>
+                <input type="checkbox" id="Newspaper" name="From Newspaper">
+                <label for="Newspaper">Newspaper / </label>
+                <br>
+                <input type="checkbox" id="Stastu" name="From Staff or Students">
+                <label for="Stastu">Staff and Students / </label>
+                <input type="checkbox" id="others" name="Others">
+                <label for="others">Others</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="photo"><b><i>Upload Photo :</i></b></label></td>
+                <td><input type="file" name="Photo:" id="photo" accept=".jpg"></td>
+            </tr>
+            <tr>    
+                <td><label for="profile"><b><i>Upload Profile :</i></b></label></td>
+                <td><input type="file" name="Profile:" id="profile" acccept=".pdf" multiple></td>
+            </tr>
+            <tr>
+                <td style="width: 259px; vertical-align: top;"><label for="cmt"><b><i>Additonal Comments :</i></b></label></td>
+                <td><textarea name="Additonal-Comments" id="cmt" cols="30" rows="10" placeholder="Enter Some Comments"></textarea></td>
+            </tr>
+            </table>
+        <button type="submit">Submit</button>
+        <input type="reset" value="Reset">    
+        </form>
+        <hr>
+        <a href="Team.html" target="_blank"><h3>Team Details</h3></a>
+    </center>
+    <script type="text/javascript" src="validate.js"></script>
+</body>
+</html>
